@@ -3,7 +3,7 @@ kind: Service
 metadata:
   labels:
     app: wil-playground
-  name: wil-playground
+  name: wil-playground-service
 spec:
   ports:
   - nodePort: 30080
