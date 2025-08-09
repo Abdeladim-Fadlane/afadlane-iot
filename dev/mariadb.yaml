@@ -4,12 +4,14 @@ metadata:
   name: mariadb
   namespace: dev
 spec:
-  ports:
-    - port: 3306
-      targetPort: 3306
+  type: ClusterIP
   selector:
     app: mariadb
-  clusterIP: None  # Headless service for stable DNS (optional)
+  ports:
+    - protocol: TCP
+      port: 3306
+      targetPort: 3306
+
 ---
 apiVersion: apps/v1
 kind: Deployment
