@@ -32,13 +32,13 @@ spec:
           image: afadlanee/wordpress:latest
           env:
             - name: WORDPRESS_DB_HOST
-              value: mariadb.dev.svc.cluster.local
-            - name: WORDPRESS_DB_NAME
-              value: wordpress
-            - name: WORDPRESS_DB_USER
+              value: "mariadb.dev.svc.cluster.local"
+            - name: MYSQL_USER
               value: wpuser
-            - name: WORDPRESS_DB_PASSWORD
-              value: "wppassword" # CHANGE or use a Secret
+            - name: MYSQL_PASSWORD
+              value: wppassword
+            - name: MYSQL_DATABASE
+              value: wordpress
           ports:
             - containerPort: 80
           volumeMounts:
