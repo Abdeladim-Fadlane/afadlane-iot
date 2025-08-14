@@ -119,6 +119,10 @@ spec:
                   key: mariadb-password
             - name: WORDPRESS_DB_NAME
               value: wordpress
+            - name: WORDPRESS_HOME
+              value: http://localhost:31080
+            - name: WORDPRESS_SITEURL
+              value: http://localhost:31080
           ports:
             - containerPort: 80
           volumeMounts:
