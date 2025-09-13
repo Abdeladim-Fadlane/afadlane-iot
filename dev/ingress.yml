@@ -11,8 +11,7 @@ spec:
   - host: localhost
     http:
       paths:
-      - path: /wordpress(/|$)(.*)
-        pathType: ImplementationSpecific
+      - path: /
         backend:
           service:
             name: wordpress
