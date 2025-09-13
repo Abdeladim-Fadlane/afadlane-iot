@@ -16,3 +16,14 @@ spec:
             name: wordpress
             port:
               number: 80
+  # Add the following section to route traffic to the n8n service
+  - host: localhost
+    http:
+      paths:
+      - path: /n8n
+        pathType: Prefix
+        backend:
+          service:
+            name: n8n-service
+            port:
+              number: 80
