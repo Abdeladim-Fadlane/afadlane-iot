@@ -12,14 +12,14 @@ spec:
     http:
       paths:
       - path: /wordpress(/|$)(.*)
-        pathType: Prefix
+        pathType: ImplementationSpecific
         backend:
           service:
             name: wordpress
             port:
               number: 80
       - path: /n8n(/|$)(.*)
-        pathType: Prefix
+        pathType: ImplementationSpecific
         backend:
           service:
             name: n8n-service
