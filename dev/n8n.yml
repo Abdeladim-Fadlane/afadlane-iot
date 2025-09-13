@@ -73,3 +73,25 @@ spec:
       targetPort: 5678
   type: ClusterIP
 
+
+---
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: n8n-ingress
+  namespace: n8n
+  annotations:
+    kubernetes.io/ingress.class: "nginx"  # or your ingress controller
+spec:
+  rules:
+    - host: localhost
+      http:
+        paths:
+          - path: /n8n
+            pathType: Prefix
+            backend:
+              service:
+                name: n8n-service
+                port:
+                  number: 80
