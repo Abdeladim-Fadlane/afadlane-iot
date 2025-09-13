@@ -1,26 +1,18 @@
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: unified-ingress
-  namespace: dev
-  annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /$1
-spec:
-  ingressClassName: nginx
-  rules:
-  - host: localhost
-    http:
-      paths:
-      - path: /
-        backend:
-          service:
-            name: wordpress
-            port:
-              number: 80
-      - path: /n8n(/|$)(.*)
-        pathType: ImplementationSpecific
-        backend:
-          service:
-            name: n8n-service
-            port:
-              number: 80
+# apiVersion: networking.k8s.io/v1
+# kind: Ingress
+# metadata:
+#   name: wordpress-ingress
+#   namespace: dev
+# spec:
+#   ingressClassName: nginx
+#   rules:
+#   - host: localhost
+#     http:
+#       paths:
+#       - path: /
+#         pathType: Prefix
+#         backend:
+#           service:
+#             name: wordpress
+#             port:
+#               number: 80
