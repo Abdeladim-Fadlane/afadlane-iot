@@ -88,7 +88,7 @@ metadata:
     kubernetes.io/ingress.class: "nginx"  # or your ingress controller
 spec:
   rules:
-      - host: https://pixelagri.com/
+      - host: pixelagri.com
         http:
         paths:
           - path: /
