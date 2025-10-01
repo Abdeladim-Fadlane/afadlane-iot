@@ -44,12 +44,17 @@ spec:
               value: "admin"       
             - name: N8N_BASIC_AUTH_PASSWORD
               value: "password"    
-            - name: N8N_HOST
-              value: "localhost"
-            - name: N8N_PORT
-              value: "5678"
             - name: NODE_ENV
               value: "production"
+            - name: N8N_HOST
+              value: "161.97.113.211"
+            - name: N8N_PORT
+              value: "31080"
+            - name: N8N_PROTOCOL
+              value: "http"
+            - name: N8N_TRUSTED_PROXIES
+              value: "0.0.0.0/0"
+
           volumeMounts:
             - name: n8n-data
               mountPath: /home/node/.n8n
@@ -83,7 +88,6 @@ metadata:
     kubernetes.io/ingress.class: "nginx"  # or your ingress controller
 spec:
   rules:
-    - host: localhost
       http:
         paths:
           - path: /
