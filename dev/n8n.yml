@@ -88,6 +88,7 @@ metadata:
     kubernetes.io/ingress.class: "nginx"  # or your ingress controller
 spec:
   rules:
+      - host: 161.97.113.211   # or your domain
       http:
         paths:
           - path: /
