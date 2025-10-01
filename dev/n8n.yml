@@ -89,7 +89,7 @@ metadata:
 spec:
   rules:
       - host: 161.97.113.211   # or your domain
-      http:
+        http:
         paths:
           - path: /
             pathType: Prefix
